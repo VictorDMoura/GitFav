@@ -6,8 +6,76 @@
 
 :root {
   font-size: 62.5%;
+  --bg-page: #000;
+  --bg-input: #06181c;
+  --bg-button: #065e7c;
+
+  --neutral-colors-white: #fff;
+
+  --platform-aliases-ttulos: #e1e1e6;
+  --platform-aliases-placeholder: #7c7c8a;
 }
 
 body {
+  background-color: var(--bg-page);
   font-size: 1.6rem;
+}
+
+#app {
+  max-width: 112rem;
+  margin: 11.5rem auto 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-wrapper input {
+  height: 4.8rem;
+  min-width: 46.2rem;
+  border: none;
+  padding: 1.6rem;
+  border-radius: 0.5rem;
+
+  font-size: 1.6rem;
+  background-color: var(--bg-input);
+  color: var(--platform-aliases-placeholder);
+}
+
+.input-wrapper .favorite {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 0;
+  max-height: 4.8rem;
+  padding: 1.2rem 3.2rem;
+  border-radius: 0.5rem;
+
+  background-color: var(--bg-button);
+  color: var(--neutral-colors-white);
+  transition: filter 300ms;
+}
+
+.input-wrapper .favorite:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
 }
