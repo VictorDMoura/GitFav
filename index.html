@@ -30,7 +30,7 @@
           </button>
         </div>
       </header>
-      <table>
+      <table class="data">
         <thead>
           <tr>
             <th>Usuário</th>
@@ -99,6 +99,29 @@
             <td class="repositories">123</td>
             <td class="followers">1234</td>
             <td class="remove">Remover</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="empty hide">
+        <thead>
+          <tr>
+            <th>Usuário</th>
+            <th>Repositories</th>
+            <th>Followers</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="no-data">
+            <td colspan="4">
+              <div class="container">
+                <img
+                  src="./assets/star-empty.svg"
+                  alt="Estrela com uma cara de surpresa"
+                />
+                <h3>Nenhum favorito ainda</h3>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

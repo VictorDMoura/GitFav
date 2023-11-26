@@ -14,6 +14,7 @@
 
   --platform-aliases-ttulos: #e1e1e6;
   --platform-aliases-placeholder: #7c7c8a;
+  --semantic-clors-danger-light: #f75a68;
 
   --hue: 194;
   --primary-color: hsla(var(--hue), 72%, 13%, 1);
@@ -29,6 +30,19 @@ body {
 #app {
   max-width: 112rem;
   margin: 11.5rem auto;
+}
+
+/* custom table scrollbar */
+table::-webkit-scrollbar {
+  width: 2.2rem;
+}
+
+table::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: transparent;
+  border-radius: 8rem;
+  box-shadow: inset 0 0 0px 6px #4a808c;
+  border: solid 8px transparent;
 }
 
 /* Header */
@@ -96,8 +110,10 @@ header {
 
 /* Table */
 table {
+  /* display: block; */
   margin-top: 9rem;
   width: 100%;
+  /* height: 37.6rem; */
 
   /* border-collapse: collapse; */
   /* border collapse can't be used with border radius */
@@ -105,7 +121,7 @@ table {
   border-radius: 1.2rem;
   border: 1px solid #4a808c;
   /* add because the flex box won't let the border radius work */
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 table * {
@@ -113,12 +129,15 @@ table * {
   font-weight: 700;
   line-height: 3.2rem;
   color: var(--platform-aliases-ttulos);
+  /* width: 100%; */
 }
 
 table th {
   padding: 1.6rem 4rem;
   background: var(--primary-color);
   text-align: left;
+  /* position: sticky; */
+  /* top: 0; */
 }
 
 table th:first-child {
@@ -165,4 +184,45 @@ td.user a {
 
 td.user a span {
   font-weight: 400;
+}
+
+td.remove {
+  color: var(--semantic-clors-danger-light);
+}
+
+td.remove:hover {
+  cursor: pointer;
+}
+
+td.remove:hover {
+  cursor: pointer;
+  filter: brightness(0.7);
+}
+
+.data.empty {
+  display: none;
+}
+
+.hide.empty {
+  display: none;
+}
+
+/* empty table */
+
+table {
+  height: 42rem;
+}
+
+tr.no-data td h3 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  color: hsla(189, 4%, 32%, 1);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
 }
