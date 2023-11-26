@@ -109,7 +109,7 @@ header {
 }
 
 /* Table */
-table {
+table.data {
   /* display: block; */
   margin-top: 9rem;
   width: 100%;
@@ -121,7 +121,7 @@ table {
   border-radius: 1.2rem;
   border: 1px solid #4a808c;
   /* add because the flex box won't let the border radius work */
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 table * {
@@ -159,7 +159,7 @@ tbody tr td {
 }
 
 /* bellow how to add a scrollbar on the tbody */
-
+/* 
 tbody {
   display: block;
   width: 100%;
@@ -171,14 +171,14 @@ thead,
 tbody tr {
   display: table;
   width: 100%;
-
+  
+} 
   /* table-layout: fixed; */
-}
 
 /* ending block of code */
 
 /* styling the scrollbar */
-tbody::-webkit-scrollbar {
+/* tbody::-webkit-scrollbar {
   scrollbar-gutter: stable;
   width: 0.6rem;
 }
@@ -188,7 +188,7 @@ tbody::-webkit-scrollbar-button {
 
 tbody::-webkit-scrollbar-track {
   /* width: 0.6rem; */
-}
+/* }
 
 tbody::-webkit-scrollbar-track-piece:start {
   background: transparent;
@@ -201,7 +201,7 @@ tbody::-webkit-scrollbar-track-piece:end {
 tbody::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #4a808c;
-}
+} */
 
 /* ending scrollbar  */
 
@@ -254,7 +254,7 @@ td.remove:hover {
 
 /* empty table */
 
-table {
+table.empty {
   height: 42rem;
 }
 
