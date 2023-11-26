@@ -160,6 +160,24 @@ tbody tr td {
   padding: 2.4rem 2.4rem 2.4rem 4rem;
 }
 
+/* abaixo como conseguir scroll na tabale */
+
+tbody {
+  display: block;
+  width: 100%;
+  height: 36rem;
+  overflow-y: scroll;
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* aqui termina como conseguir o scroll */
+
 table tr:nth-child(even) {
   background: #092d38;
 }
