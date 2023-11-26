@@ -14,6 +14,9 @@
 
   --platform-aliases-ttulos: #e1e1e6;
   --platform-aliases-placeholder: #7c7c8a;
+
+  --hue: 194;
+  --primary-color: hsla(var(--hue), 72%, 13%, 1);
 }
 
 body {
@@ -25,7 +28,7 @@ body {
 
 #app {
   max-width: 112rem;
-  margin: 11.5rem auto 0;
+  margin: 11.5rem auto;
 }
 
 /* Header */
@@ -92,3 +95,74 @@ header {
 }
 
 /* Table */
+table {
+  margin-top: 9rem;
+  width: 100%;
+
+  /* border-collapse: collapse; */
+  /* border collapse can't be used with border radius */
+  border-spacing: 0;
+  border-radius: 1.2rem;
+  border: 1px solid #4a808c;
+  /* add because the flex box won't let the border radius work */
+  overflow: hidden;
+}
+
+table * {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  color: var(--platform-aliases-ttulos);
+}
+
+table th {
+  padding: 1.6rem 4rem;
+  background: var(--primary-color);
+  text-align: left;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+tbody tr td {
+  padding: 2.4rem 2.4rem 2.4rem 4rem;
+}
+
+table tr:nth-child(even) {
+  background: #092d38;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a span {
+  font-weight: 400;
+}
