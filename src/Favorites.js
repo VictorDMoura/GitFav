@@ -12,8 +12,21 @@ export class Favorites{
                 name: "Mayk Brito",
                 public_repos: 123,
                 followers: 123
+            },
+            {
+                login: "VictorDMoura",
+                name: "Victor de Moura",
+                public_repos: 123,
+                followers: 123
             }
+
         ]
+    }
+
+    delete(user){
+        const filteredEntries = this.entries.filter((entry) => entry.login !== user.login)
+        this.entries = filteredEntries
+        this.update()
     }
 
 
