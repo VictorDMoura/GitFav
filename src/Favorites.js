@@ -69,6 +69,20 @@ export class FavoritesView extends Favorites{
 
     update(){
         this.removeAllTr()
+        
+        if(this.entries.length === 0){            
+            const emptyTable = this.root.querySelector('.empty.hide')
+            const dataTable = this.root.querySelector(".data")
+            dataTable.classList.add('empty')
+            emptyTable.classList.remove("hide")
+        } else if(this.entries.length === 1 && this.root.querySelectorAll(".empty").length > 1) {
+            const dataTable = this.root.querySelector(".data.empty")
+            const emptyTable = this.root.querySelectorAll(".empty")
+            dataTable.classList.remove('empty')
+            emptyTable[1].classList.add("hide")
+        }
+
+
 
         this.entries.forEach((user) => {
             const row = this.createRow()

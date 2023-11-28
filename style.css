@@ -256,6 +256,15 @@ td.remove:hover {
 
 table.empty {
   height: 42rem;
+  margin-top: 9rem;
+  width: 100%;
+
+  /* border collapse can't be used with border radius */
+  border-spacing: 0;
+  border-radius: 1.2rem;
+  border: 1px solid #4a808c;
+  /* add because the flex box won't let the border radius work */
+  overflow: hidden;
 }
 
 tr.no-data td h3 {
