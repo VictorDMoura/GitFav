@@ -1,3 +1,5 @@
+import { GithubUser } from "./GithubUser.js"
+
 // class to control the logic
 export class Favorites{
     constructor(root){
@@ -23,6 +25,29 @@ export class Favorites{
         ]
     }
 
+    async add(username){
+        try{
+
+            const userExists = this.entries.find(entry => entry.login === username)
+
+            if(userExists){
+                throw new Error("Usuário ja cadastrado")
+            }
+            
+            const user = await GithubUser.search(username)
+
+            if(user.login === undefined){
+                throw new Error("Usuário não encontrado!")
+            }
+
+            this.entries = [user, ...this.entries]
+            this.update()
+
+        } catch(error){
+            alert(error.message)
+        }
+    }
+
     delete(user){
         const filteredEntries = this.entries.filter(entry => entry.login !== user.login)
         this.entries = filteredEntries
@@ -39,6 +64,15 @@ export class FavoritesView extends Favorites{
         super(root)
         this.tbody = document.querySelector('table.data tbody')
         this.update()
+        this.onAdd()
+    }
+
+    onAdd(){
+        const addButton = this.root.querySelector('.input-wrapper .favorite')
+        addButton.onclick = () => {
+            const {value} = this.root.querySelector('#input-search')
+            this.add(value)
+        }
     }
 
     update(){
